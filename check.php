@@ -2,19 +2,29 @@
 function check_menu($check_menu){
     switch($check_menu){
         case ITEM::INDEX;
-        echo "商品一覧です";
+        return true;
         break;
-        case ITEM::REGISTER;
-        echo "商品登録をします";
-        break;
-        case ITEM::DELETE;
-        echo "商品の情報を削除します";
-        break;
-        default:
-    echo 'どれでもありません。';
 
+        case ITEM::REGISTER;
+        return true;
+        break;
+
+        case ITEM::DELETE;
+        return true;
+        break;
+
+        case ITEM::OUTPUTCSV;
+        return true;
+        break;
+
+        case ITEM::EXIT;
+        return true;
+        break;
+    }
+    return false;
 }
-}
+
+
 function name_check($name){
     if($name === ""){
         return false;

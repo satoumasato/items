@@ -1,4 +1,5 @@
 <?php
+
 function check_menu($check_menu){
     switch($check_menu){
         case ITEM::INDEX;
@@ -31,5 +32,18 @@ function name_check($name){
     }
     return true;
 }
+
+function check_delete($items,$check_id){
+
+    for($i = 0; $i <count($items); $i++){
+        if($items[$i]->id == $check_id){
+            return true;
+        }
+        echo "入力したidの商品がありません".PHP_EOL;
+    }
+    return false;
+}
+
+
 
  ?>
